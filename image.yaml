@@ -1,0 +1,15 @@
+apiVersion: kpack.io/v1alpha2
+kind: Image
+metadata:
+  name: completion-service-image
+  namespace: default
+spec:
+  tag: stwomack/completion-service
+  serviceAccountName: tutorial-service-account
+  builder:
+    name: my-builder
+    kind: Builder
+  source:
+    git:
+      url: https://github.com/stwomack/completion-service
+      revision: master

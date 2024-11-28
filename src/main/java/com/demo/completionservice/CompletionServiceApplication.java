@@ -29,7 +29,7 @@ class OrderCompletionController {
         this.orderRepository = orderRepository;
     }
 
-    @PostMapping("/orders")
+    @PostMapping("/completions")
     public String completeOrder(@RequestBody Order order) {
         orderRepository.save(order);
         return "Order completed";

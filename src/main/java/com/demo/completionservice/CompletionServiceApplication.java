@@ -38,6 +38,7 @@ class OrderCompletionController {
             orderRepository.save(customOrder);
         } catch (Exception e) {
             LOG.error("Uh oh. This dumb error again!: {}", e.toString());
+            return "Order failed";
         }
         LOG.info("In CompletionService, order saved: {} ", customOrder.toString());
         return "Order completed";

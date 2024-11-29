@@ -41,10 +41,10 @@ class OrderCompletionController {
                 return "Order failed";
             }
             LOG.info("In CompletionService, order saved: {} ", customOrder.toString());
-            return "Order completed";
         } catch (Exception e) {
             LOG.error("I hopefully finally caught the exception");
         }
+        return "Order completed";
     }
 }
 

@@ -32,14 +32,14 @@ class OrderCompletionController {
     }
 
     @PostMapping("/completions")
-    public String completeOrder(@RequestBody Order order) {
-        LOG.info("In CompletionService, about to persist order: {} ", order.toString());
-        orderRepository.save(order);
-        LOG.info("In CompletionService, order saved: {} ", order.toString());
+    public String completeOrder(@RequestBody CustomOrder customOrder) {
+        LOG.info("In CompletionService, about to persist order: {} ", customOrder.toString());
+        orderRepository.save(customOrder);
+        LOG.info("In CompletionService, order saved: {} ", customOrder.toString());
         return "Order completed";
     }
 }
 
 @Repository
-interface OrderRepository extends JpaRepository<Order, Long> {
+interface OrderRepository extends JpaRepository<CustomOrder, Long> {
 }

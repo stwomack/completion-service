@@ -38,10 +38,6 @@ class CustomOrder {
         return version;
     }
 
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
-
     public String getCustomerName() {
         return customerName;
     }

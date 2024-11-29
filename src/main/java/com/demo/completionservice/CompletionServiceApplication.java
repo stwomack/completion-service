@@ -1,6 +1,5 @@
 package com.demo.completionservice;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -33,15 +32,19 @@ class OrderCompletionController {
 
     @PostMapping("/completions")
     public String completeOrder(@RequestBody CustomOrder customOrder) {
-        LOG.info("In CompletionService, about to persist order: {} ", customOrder.toString());
         try {
-            orderRepository.save(customOrder);
+            LOG.info("In CompletionService, about to persist order: {} ", customOrder.toString());
+            try {
+                orderRepository.save(customOrder);
+            } catch (Exception e) {
+                LOG.error("Uh oh. This dumb error again!: {}", e.toString());
+                return "Order failed";
+            }
+            LOG.info("In CompletionService, order saved: {} ", customOrder.toString());
+            return "Order completed";
         } catch (Exception e) {
-            LOG.error("Uh oh. This dumb error again!: {}", e.toString());
-            return "Order failed";
+            LOG.error("I hopefully finally caught the exception");
         }
-        LOG.info("In CompletionService, order saved: {} ", customOrder.toString());
-        return "Order completed";
     }
 }
 

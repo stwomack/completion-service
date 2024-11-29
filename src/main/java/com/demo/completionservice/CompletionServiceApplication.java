@@ -32,6 +32,7 @@ class OrderCompletionController {
 
     @PostMapping("/completions")
     public String completeOrder(@RequestBody CustomOrder customOrder) {
+        LOG.error("WTF!?");
         try {
             LOG.info("In CompletionService, about to persist order: {} ", customOrder.toString());
             try {

@@ -34,7 +34,7 @@ class OrderCompletionController {
     @PostMapping("/completions")
     public String completeOrder(@RequestBody Order order) {
         LOG.info("In CompletionService, about to persist order: {} ", order.toString());
-//        orderRepository.save(order);
+        orderRepository.save(order);
         LOG.info("In CompletionService, order saved: {} ", order.toString());
         return "Order completed";
     }

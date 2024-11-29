@@ -10,6 +10,7 @@ class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     String customerName;
     String itemName;
     int quantity;

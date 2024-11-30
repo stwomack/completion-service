@@ -8,9 +8,6 @@ class CustomOrder {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Version
-    private Integer version;
-
     String customerName;
     String itemName;
     int quantity;
@@ -32,10 +29,6 @@ class CustomOrder {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Integer getVersion() {
-        return version;
     }
 
     public String getCustomerName() {
@@ -69,5 +62,4 @@ class CustomOrder {
     public void setShippingProvider(String shippingProvider) {
         this.shippingProvider = shippingProvider;
     }
-
 }

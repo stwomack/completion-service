@@ -17,3 +17,6 @@ spec:
           image: stwomack/completion-service:latest
           ports:
             - containerPort: 8080
+          envFrom:
+            - secretRef:
+                name: db-secretgs

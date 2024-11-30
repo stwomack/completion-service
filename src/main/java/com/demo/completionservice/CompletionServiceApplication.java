@@ -1,5 +1,6 @@
 package com.demo.completionservice;
 
+import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -31,6 +32,7 @@ class OrderCompletionController {
     }
 
     @PostMapping("/completions")
+    @Transactional
     public String completeOrder(@RequestBody CustomOrder customOrder) {
         LOG.error("WTF!?");
         try {

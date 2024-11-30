@@ -32,7 +32,6 @@ class OrderCompletionController {
     }
 
     @PostMapping("/completions")
-    @Transactional
     public String completeOrder(@RequestBody CustomOrder customOrder) {
         LOG.error("WTF!?");
         try {

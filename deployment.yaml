@@ -20,3 +20,6 @@ spec:
           envFrom:
             - secretRef:
                 name: db-secret
+          env:
+            - name: OTEL_EXPORTER_OTLP_ENDPOINT
+              value: "http://grafana-k8s-monitoring-alloy.default.svc.cluster.local:4318"
